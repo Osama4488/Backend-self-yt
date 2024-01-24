@@ -1,3 +1,5 @@
+// Async handler method will be used only for Web requests
+
 const asyncHandler = (requestHandler) => {
   return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
